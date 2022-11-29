@@ -1,0 +1,58 @@
+<!-- Nav Bar -->
+<nav class="navbar navbar-expand-lg bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Project</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+          <li class="nav-item">
+            <% if (title == "Home") { %>
+              <a class="nav-link active" href="/home">
+            <% } else { %>
+              <a class="nav-link" href="/home">
+                <% } %><i class="fa-solid fa-house"></i> Home</a>
+              </li>
+
+              <li class="nav-item">
+                <% if (title == "Survey") { %>
+                  <a class="nav-link active" href="/study-list">
+                <% } else { %>
+                  <a class="nav-link" href="/study-list">
+                    <% } %><i class="fa-solid fa-square-poll-vertical"></i> Survey</a>
+                  </li>
+
+              <li class="nav-item">
+                <% if (title == "Content") { %>
+                  <a class="nav-link active" href="/content">
+                <% } else { %>
+                  <a class="nav-link" href="/content">
+                <% } %>
+                <i class="fa-solid fa-arrows-to-circle"></i> Content</a>    
+              </li>
+
+          <li class="nav-item">
+            <% if (title == "About") { %>
+              <a class="nav-link active" href="/about">
+            <% } else { %>
+              <a class="nav-link" href="/about">
+            <% } %>
+            <i class="fa-solid fa-hourglass-end"></i> About</a>    
+          </li>
+          
+          <li class="nav-item">
+            <% if (title == "Contact") { %>
+              <a class="nav-link active" href="/contact">
+            <% } else { %>
+              <a class="nav-link" href="/contact">
+            <% } %>
+              <i class="fa-solid fa-envelope"></i> Contact</a>    
+          </li>
+         
+            </ul>
+
+      </div>
+    </div>
+  </nav>

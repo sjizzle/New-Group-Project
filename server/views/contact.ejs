@@ -1,0 +1,27 @@
+<% include partials/header.ejs %>
+<% include partials/mainNav.ejs %>
+
+<!-- Main Navigation -->
+<main>
+  <h1>Welcome to the <%= title %> Page</h1>
+
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+    </div>
+  </div>
+  <form action=mailto:email@email.com ?subject=Signup Form method="post" 
+    enctype="text/plain" name="form"> 
+  <label for="fname">Name:</label><br>
+  <input type="text" id="fname" name="fname"><br>
+  <label for="name">Email:</label><br>
+  <input type="email" name="email" size="28"><br>
+  <label for="comments">Comments?</label><br>     
+  <textarea name="comments" cols="60" rows="6"></textarea> 
+  <p><input type="submit" value="Click here to submit the form"/> 
+  <input type="reset" value="Click here to reset the form"/></p>
+</form>
+</main>
+<!-- Bottom Navigation -->
+<% include partials/bottomNav.ejs %>
+<!-- Footer -->
+<% include partials/footer.ejs %>

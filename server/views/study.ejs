@@ -1,0 +1,57 @@
+<% include partials/header.ejs %>
+<% include partials/mainNav.ejs %>
+
+<!-- Main Navigation -->
+<main>
+    <div class="container">
+    <div class="row">
+    <div class="col-md-offset-3 col-md-6">
+    <h1><%= title %> Page</h1>
+    <a href="study-list/add" class="btn btn-primary" role="button">
+    <i class="fas fa-circle"></i> Add Survey</a>
+    <br>
+    <br>
+    <table class="table table-bordered table-striped table-hover">
+    <tr>
+    <th class="text-center">Name</th>
+    <th class="text-center">Major</th>
+    <th class="text-center">Year</th>
+    <th class="text-center">Grad</th>
+    <th class="text-center">Career</th>
+    <th class="text-center"></th>
+    <th class="text-center"></th>
+    </tr>    
+
+    <!-- Repeat the template -->
+    <% for(let count=0; count<Studylist.length; count++) { %>
+        <tr>
+        <td class="text-center"><%= Studylist[count].Name %></td>
+        <td class="text-center"><%= Studylist[count].Major %></td>
+        <td class="text-center"><%= Studylist[count].Year %></td>
+        <td class="text-center"><%= Studylist[count].Grad %></td>
+        <td class="text-center"><%= Studylist[count].Career %></td>
+
+        <td class="text-center"><a href="/study-list/edit/<%= Studylist[count].id %>"
+        class="btn btn-primary">
+        <i class="fa-sharp fa-solid fa-file-pen"></i> Edit</a>
+        </td>
+
+        <td class="text-center"><a href="/study-list/delete/<%= Studylist[count].id %>"
+            class="btn btn-danger">
+            <i class="fa-solid fa-delete-left"></i> Delete</a>
+            </td>
+
+        </tr>
+
+    <% } %>
+    </table>
+
+
+    </div>
+    </div>
+  </div>
+</main>
+<!-- Bottom Navigation -->
+<% include partials/bottomNav.ejs %>
+<!-- Footer -->
+<% include partials/footer.ejs %>

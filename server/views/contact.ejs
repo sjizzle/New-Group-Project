@@ -1,25 +1,34 @@
 <% include partials/header.ejs %>
 <% include partials/mainNav.ejs %>
-
 <!-- Main Navigation -->
 <main>
   <h1>Welcome to the <%= title %> Page</h1>
-
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-    </div>
-  </div>
-  <form action=mailto:email@email.com ?subject=Signup Form method="post" 
-    enctype="text/plain" name="form"> 
-  <label for="fname">Name:</label><br>
-  <input type="text" id="fname" name="fname"><br>
-  <label for="name">Email:</label><br>
-  <input type="email" name="email" size="28"><br>
-  <label for="comments">Comments?</label><br>     
-  <textarea name="comments" cols="60" rows="6"></textarea> 
-  <p><input type="submit" value="Click here to submit the form"/> 
-  <input type="reset" value="Click here to reset the form"/></p>
-</form>
+  <!-- Div Contact holds content of the forum -->
+  <form id="myForm" action="mailto:sean.jackson@ontariotechu.net" method="post" enctype="text/plain" name="form">
+        <p>
+          <label for="Name">Name</label><br>
+          <input id="Name" type="text" placeholder="Enter Name: " name="name" required>
+        </p>
+  
+        <p>
+          <label for="email">Email</label><br>
+          <input id="email" type="text" placeholder="Enter Email: " name="email" required>
+        </p>
+  
+        <p>
+          <label for="number">Number</label><br>
+          <input id="number" type="number" placeholder="Enter Phone Number: " name="number">
+        </p>
+  
+        <p>
+          <label for="comments">Comments</label><br>
+          <textarea name="comments" id="comments" rows="4" cols="32"></textarea>
+        </p>
+  
+  
+        <p><input id="button1" type="submit" value="Submit"></p> <p><input type="reset" value="Reset"></p>
+      
+    </form>
 </main>
 <!-- Bottom Navigation -->
 <% include partials/bottomNav.ejs %>

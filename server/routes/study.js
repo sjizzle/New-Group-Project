@@ -1,111 +1,43 @@
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
-const { off } = require('../config/app');
-const study = require('../model/study');
 
 // Connect with Survey Model
 
 let Study = require('../model/study');
+let studyController = require('../controller/study');
+
+// requireAuth function
+function requireAuth(req,res,next)
+{
+    if(!req.isAuthenticated())
+    {
+        return res.redirect('/login');
+    }
+    next();
+}
 
 /* Read Operation */
+/* Route to Study */
 
-router.get('/',(req,res,next)=>{
-    Study.find((err, studylist)=>{
-        if(err)
-        {
-            return console.error(err);
-        }
-        else
-        {
-            res.render('study', {
-                title: 'Survey',
-                Studylist: studylist
-            })
-
-        }
-    });
-});
+router.get('/', studyController.displayStudyList);
 
 /* Add Operations */
 /* Get Route for Displaying Add */
-router.get('/add',(req,res,next)=> {
-    let newStudy = Study ({
-        "Name":req.body.name,
-        "Major":req.body.author,
-        "Year":req.body.Year,
-        "Grad":req.body.Grad,
-        "Career":req.body.Career
-        });
-        if(err)
-        {
-            console.log(err);
-            res.end(err);
-        }
-        else
-        {
-            res.redirect('study');
-        }
-});
+router.get('/add',requireAuth, studyController.displayAddPage);
 
+/* Post route for processing add page */
+router.post('/add',requireAuth, studyController.processAddPage);
 
 /* Edit Operation */
 /* Get Route for Displaying Edit */
 
-router.get('/edit/:id', (req,res,next)=> {
-    let id = req.params.id;
-    study.findById(id,(err,studyToEdit)=>{
-        if(err)
-        {
-            console.log(err);
-            res.end(err);
-        }
-        else
-        {
-            res.render('/edit',{title: 'Edit Survey', study: studyToEdit});
-        }
-    })
-})
-
+router.get('/edit/:id',requireAuth, studyController.displayEditPage);
 /* Post Edit */
 
-router.post('/edit/:id',(req,res,next)=> {
-    let id=req.params.id;
-    let updateStudy = Study({
-        "_id":id,
-        "Name":req.body.name,
-        "Major":req.body.author,
-        "Year":req.body.Year,
-        "Grad":req.body.Grad,
-        "Career":req.body.Career
-    });
-    Study.updateOne({_id:id}, updateStudy,(err)=>{
-        if(err)
-        {
-            console.log(err);
-            res.end(err);
-        }
-        else
-        {
-            res.redirect('/study');
-        }
-    });
-});
+router.post('/edit/:id',requireAuth, studyController.processEditPage);
 
 /* Delete Operation */ 
 
-router.get('/delete/:id', (req,res,next)=> {
-    let id =req.params.id;
-    Study.deleteOne({_id:id}, (err)=>{
-        if(err)
-        {
-            console.log(err);
-            res.end(err);
-        }
-        else
-        {
-            res.redirect('/study-list');
-        }
-    });
-});
+router.get('/delete/:id',requireAuth, studyController.performDelete);
 module.exports = router;

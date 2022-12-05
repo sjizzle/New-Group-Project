@@ -10,3 +10,5 @@ Code help from the TA - Tanzina on Fridat Dec 4th, 2022 during Tutorial - Help f
 *** Terminal errors - unable to push/commit from VS code without breaking my program and error messgaes.Notified TA as well of the issue with localhost/Survey not working or the mongoDB cloud connecting but failing to display DB or gives a Error for login. 
 
 The building blocks for this web app is mainly the canvas videos.
+
+broke app after last commit - copy and pasted my VS Code Survey program manually :(

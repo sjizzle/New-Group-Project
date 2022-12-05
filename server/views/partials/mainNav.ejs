@@ -1,10 +1,11 @@
 <!-- Nav Bar -->
 <nav class="navbar navbar-expand-lg bg-primary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/">Project</a>
+      <a class="navbar-brand" href="/">Student Survey</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      <!-- Div holding list -->
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
@@ -50,8 +51,22 @@
             <% } %>
               <i class="fa-solid fa-envelope"></i> Contact</a>    
           </li>
-         
-            </ul>
+
+          <% if(typeof displayName== 'string' && displayName) { %>
+
+            <li class="navbar-text">
+            <i class="fas fa-lg fa-user"></i>
+            Welcome, <%= displayName %> </li>
+            <li class="nav-item">
+            <a href="/logout" class="nav-link">
+            <i class="fas fa-lg fa-sign-out-alt"></i> Logout</a></li>
+            <% } else { %>
+
+            <li class="nav-item">
+              <a href="/login" class="nav-link">
+              <i class="fas fa-lg sign-in-alt"></i> Login</a></li>  
+            <% } %>
+            </ul> 
 
       </div>
     </div>

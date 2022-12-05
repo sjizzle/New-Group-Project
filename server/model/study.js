@@ -6,10 +6,10 @@ let surveyModel = mongoose.Schema({
     Year: String,
     Grad: String,
     Career: String,
-},
-{
-    collection: "study"
-}
+    },
+    {
+        collection: "study"
+    }
 
 );
 module.exports = mongoose.model('Survey', surveyModel);

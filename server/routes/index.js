@@ -1,28 +1,40 @@
-var express = require('express');
-var router = express.Router();
+let express = require('express');
+let router = express.Router();
+
+
+// Connect with Study Model
+let Study = require('../model/study');
+let indexController = require('../controller/index');
+
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Home' });
-});
+router.get('/', indexController.displayHomePage);
 
 /* GET home page. */
-router.get('/home', function(req, res, next) {
-  res.render('index', { title: 'home' });
-});
+router.get('/home', indexController.displayHomePage);
 
-/* GET home page. */
-router.get('/content', function(req, res, next) {
-  res.render('index', { title: 'Content' });
-});
+/* GET Content page. */
+router.get('/content', indexController.displayContentPage);
 
 /* GET About page. */
-router.get('/about', function(req, res, next) {
-  res.render('index', { title: 'About' });
-});
+router.get('/about', indexController.displayAboutPage);
 
 /* GET Contact page. */
-router.get('/contact', function(req, res, next) {
-  res.render('contact.ejs', { title: 'Contact' });
-});
+router.get('/contact', indexController.displayContactPage);
+
+/* Get router for login page */
+router.get('/login', indexController.displayLoginPage);
+
+/* Post router for login page */
+router.post('/login', indexController.processLoginPage);
+
+/* Get router for Register page */
+router.get('/register', indexController.displayRegisterPage);
+
+/* Post router for Register page */
+router.post('/register', indexController.processRegisterPage);
+
+/* Post router for logout page */
+router.get('/logout', indexController.performLogout);
+
 module.exports = router;

@@ -12,3 +12,8 @@ Code help from the TA - Tanzina on Fridat Dec 4th, 2022 during Tutorial - Help f
 The building blocks for this web app is mainly the canvas videos.
 
 broke app after last commit - copy and pasted my VS Code Survey program manually :(
+
+Update - Study Folder Dec 5th - in preparation for Release V3.
+
+Angular Fundamental Course for Absolute Beginners 2022 Course - 
+https://www.udemy.com/course/angular-fundamental-course-for-absolute-beginners-2022/learn/lecture/30327098#overview 

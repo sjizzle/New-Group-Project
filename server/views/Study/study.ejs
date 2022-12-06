@@ -1,0 +1,76 @@
+<% include ../partials/header.ejs %>
+<% include ../partials/mainNav.ejs %>
+
+<!-- Main  -->
+<main>
+    <div class="container">
+    <div class="row">
+    <div class="col-md-offset-5 col-md-10">
+    <h1><%= title %> Page</h1>
+
+    <% if(typeof displayName=="string" && displayName) { %>
+
+        <a href="/study-list/add" class="btn btn-primary" role="button">
+        <i class="fas fa-circle"></i> Add Survey</a>
+        <br>
+        <br>
+        
+    <% } %>
+    <table class="table table-bordered table-striped table-hover">
+    <tr>
+    <% if(typeof displayName=="string" && displayName) { %>
+    <th class="text-center col-3">Student Name</th>
+    <th class="text-center col-3">Student Major</th>
+    <th class="text-center col-3">Current Year</th>
+    <th class="text-center col-3">Graduation Year</th>
+    <th class="text-center col-3">Career Path</th>
+    <th class="text-center col-3"></th>
+    <th class="text-center col-3"></th>
+    <% } else { %>
+    <th class="text-center col-3">Student Name</th>
+    <th class="text-center col-3">Student Major</th>
+    <th class="text-center col-3">Current Year</th>
+    <th class="text-center col-3">Graduation Year</th>
+    <th class="text-center col-3">Career Path</th>
+    <% } %>
+    </tr>    
+
+    <!-- Repeat the template -->
+    <% for(let count=0; count<Studylist.length; count++) { %>
+        <tr>
+        <% if(typeof displayName=="string" && displayName) { %>
+        <td class="text-center col-3"><%= Studylist[count].Name %></td>
+        <td class="text-center col-3"><%= Studylist[count].Major %></td>
+        <td class="text-center col-3"><%= Studylist[count].Year %></td>
+        <td class="text-center col-3"><%= Studylist[count].Grad %></td>
+        <td class="text-center col-3"><%= Studylist[count].Career %></td>
+    
+        <td class="text-center col-3"><a href="/study-list/edit/<%= Studylist[count].id %>"
+        class="btn btn-primary">
+        <i class="fa-sharp fa-solid fa-file-pen"></i> Edit</a>
+        </td>
+
+        <td class="text-center col-3"><a href="/study-list/delete/<%= Studylist[count].id %>"
+            class="btn btn-danger">
+            <i class="fa-solid fa-delete-left"></i> Delete</a>
+            </td>
+    <% } else { %>
+        <td class="text-center col-3"><%= Studylist[count].Name %></td>
+        <td class="text-center col-3"><%= Studylist[count].Major %></td>
+        <td class="text-center col-3"><%= Studylist[count].Year %></td>
+        <td class="text-center col-3"><%= Studylist[count].Grad %></td>
+        <td class="text-center col-3"><%= Studylist[count].Career %></td>
+    <% } %>    
+    </tr>
+    <% } %>
+    </table>
+
+
+    </div>
+    </div>
+  </div>
+</main>
+<!-- Bottom Navigation -->
+<% include ../partials/bottomNav.ejs %>
+<!-- Footer -->
+<% include ../partials/footer.ejs %>

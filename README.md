@@ -4,7 +4,7 @@ I tried to get help from the prof but he was not feeling well.
 
 Stackoverflow: https://stackoverflow.com/questions/14168433/node-js-error-connect-econnrefused
 
-Fixed error ../nodue_module for path errors.
+Fixed error ../node_module for path errors.
 
 Code help from the TA - Tanzina on Fridat Dec 4th, 2022 during Tutorial - Help from the prof on previous program which in turn helped on the building of this app.
 *** Terminal errors - unable to push/commit from VS code without breaking my program and error messgaes.Notified TA as well of the issue with localhost/Survey not working or the mongoDB cloud connecting but failing to display DB or gives a Error for login. 

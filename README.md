@@ -1,4 +1,4 @@
-﻿# New-Group-Project - Sean Jackson - 100296566
+﻿# New-Group-Project -
 Used canvas videos from Professor Ahmed, used bootstrap, font awesome, w3school, bootstrap, used stackoverflow for ECONNREFUSED error which said use 0.0.0.0:27017 for local host and it fixed this issue. I researched more to further understand. Would love Professor Ahmed to follow up on the rational (if possible).
 I tried to get help from the prof but he was not feeling well. 
 
